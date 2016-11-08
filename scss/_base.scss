@@ -1,0 +1,64 @@
+body {
+	background: $desktop-bg;
+}
+
+.whitebox{
+  background-color: #C6FFEF;
+  border: 0px solid rgba(0, 0, 0, 0.8);
+  border-width: 2px;
+  padding: 20px;
+  margin-top: 25px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+}
+
+body {
+  background: #2377FB;
+   background-image: url("../img/travis.jpg");
+   background-position: left bottom; /*Positioning*/
+   background-repeat: no-repeat; /*Prevent showing multiple background images*/
+}
+
+main,
+aside {
+	@include box();
+}
+
+main {
+	@include span(7);
+}
+
+aside {
+	@include span(5 last);
+}
+
+@include susy-breakpoint($large) {
+	body {
+		background:$large-bg;
+	}//body
+}//large breakpoint
+
+@include susy-breakpoint($medium) {
+	body {
+		background:$medium-bg;
+		}//body
+	main {
+    	@include span(6);
+    }//main
+    aside {
+    	@include span(6 last);
+    }//aside
+	
+}//medium breakpoint
+
+@include susy-breakpoint($small) {
+	body {
+		background:$small-bg;
+		}//body
+	main {
+    	@include span(12);
+    }//main
+    aside {
+    	@include span(12);
+    }//aside
+	
+}//small breakpoint
